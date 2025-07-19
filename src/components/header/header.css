@@ -1,0 +1,197 @@
+:root {
+  --main-color: #0090f0;
+  --p-color: #7b7b7b;
+  --bg-color: #f3f3f3;
+  --white-color: #fff;
+  --color-heading: #253237;
+  --border-color: #d6d6d6d5;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: var(--white-color);
+}
+.top-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5px 0;
+}
+.top-header .logo {
+    width: 140px;
+}
+.top-header .search_box {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  background: var(--bg-color);
+  border-radius: 30px;
+  border: 1px solid var(--main-color);
+}
+.top-header .search_box input {
+  width: 440px;
+  height: 45px;
+  padding: 5px 15px 5px 20px;
+  background: var(--bg-color);
+  border-radius: 30px 0 0 30px;
+}
+.top-header .search_box button {
+  height: 45px;
+  width: 60px;
+  background: var(--main-color);
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+}
+.top-header .search_box button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+}
+.top-header .header-icons {
+  display: flex;
+  gap: 30px;
+}
+.top-header .header-icons .icon {
+  position: relative;
+  cursor: pointer;
+}
+.top-header .header-icons .icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--main-color);
+}
+.top-header .header-icons .icon:hover svg {
+  fill: var(--color-heading);
+}
+.top-header .header-icons .icon .count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--main-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+/* end topHeader */
+/* strat btmHeader */
+.btm-header {
+  background: var(--main-color);
+}
+.btm-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.btm-header .nav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  height: 30px;
+}
+.btm-header .category_nav {
+  width: 220px;
+  height: 100%;
+  position: relative;
+}
+.btm-header .category_nav .category_nav_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white-color);
+  border-radius: 0 0 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: 1px solid #999;
+  z-index: 1000;
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 0.3s ease-in-out;
+}
+.btm-header .category_nav .category_nav_list.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.btm-header .category_nav .category_nav_list a {
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+.btm-header .category_nav .category_nav_list a:hover{
+  animation: fadeIn 0.5s ease-in-out forwards;
+  color: white;
+  background: linear-gradient(90deg, var(--main-color) 0%, var(--white-color) 100%);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(36, 35, 35, 0.041) 0px 4px 12px;
+}
+@keyframes fadeIn {
+  0%, 25% {
+    background: linear-gradient(90deg, var(--main-color) 2%, var(--white-color) 25%);
+  }
+  50%, 100% {
+    background: linear-gradient(90deg, var(--main-color) 0%, var(--white-color) 100%);
+  }
+  }
+
+
+.btm-header .category_nav .category_nav_list a:last-child{
+  border-bottom: none;
+}
+.btm-header .category_nav .category_btn{
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--main-color);
+  color: var(--color-heading);
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btm-header .category_nav .category_btn svg {
+  fill: var(--white-color);
+}
+.btm-header .category_nav .category_btn p {
+  color: var(--white-color);
+}
+.btm-header .nav_links {
+  display: flex;
+}
+.btm-header .nav_links li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 11px 25px;
+}
+.btm-header .nav_links li a{
+  color: var(--white-color);
+  padding: 5px 0;
+}
+.btm-header .nav_links li .active  {
+  border-bottom: 2px solid var(--white-color);
+  color: #00FFCB;
+}
+.btm-header .sign_regs-icon {
+  display: flex;
+  gap: 20px;
+}
+.btm-header .sign_regs-icon svg{
+  font-size: 20px;
+  fill: var(--white-color);
+  cursor: pointer;
+}

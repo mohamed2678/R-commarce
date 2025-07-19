@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #0090f0;
+  --p-color: #7b7b7b;
+  --bg-color: #f3f3f3;
+  --white-color: #fff;
+  --color-heading: #253237;
+  --border-color: #d6d6d6d5;
+}
+body {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding-top: 195px;
+}
+img {
+  width: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--color-heading);
+}
+span {
+  color: var(--main-color);
+}
+p {
+  color: var(--p-color);
+}
+input,button, select, textarea {
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: var(--main-heading);
+}
+.container {
+  width: 90%;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+.btn {
+  padding: 10px 18px ;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: var(--white-color);
+  background: #0090f0;
+  border-radius: 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  width: max-content;
+}
+.btn:hover {
+  scale: 1.05;
+  background: #0077c2;
+}
+.in-cart {
+  border-color: var(--main-color) !important;
+}
