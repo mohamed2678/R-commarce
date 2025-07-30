@@ -1,18 +1,43 @@
 import React, { useContext } from 'react'
 import { IoMdStar, IoMdStarHalf  } from "react-icons/io";
 import { CiShoppingCart, CiHeart, CiShare2, CiCircleCheck } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../Cartcontext/CartContext';
 import { FaCheck } from 'react-icons/fa6';
+import toast from 'react-hot-toast';
+
+
 
 function Product({item}) {
-
-
+  
+  // Import the CartContext to access cart items and functions  
   const { cartItems, addCart } = useContext(CartContext)
 
+    const Navigate = useNavigate()
+  
   console.log(cartItems)
-
+  
+  // Check if the item is already in the cart
   const isCart = cartItems.some(i => i.id === item.id);
+  
+  const HandleAddTocart = () => {
+      addCart(item);
+  
+    toast.success(
+      <div className='stoast-wrapper'>
+        <img src={item.thumbnail} alt="" />
+        <div className='toast-content'>
+          <strong>{item.title}</strong>
+          Added to cart
+          <div>
+          <button className='btn' onClick={() => Navigate('/Cart')}>Veiw cart</button>
+          </div>
+          </div>
+      </div>
+      ,{duration: 3500}
+    )
+  }
+
 
 
   return (
@@ -33,7 +58,7 @@ function Product({item}) {
       <p className="price"><span>$ {item.price}</span></p>
       </Link>
       <div className="icons">
-        <span  className='btn_addToCart'  onClick={() => addCart(item)}><CiShoppingCart /></span>
+        <span className='btn_addToCart' onClick={HandleAddTocart}><CiShoppingCart /></span>
         <span><CiHeart /></span>
         <span><CiShare2 /></span>
       </div>

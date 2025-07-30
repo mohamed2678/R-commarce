@@ -146,6 +146,7 @@
 
 .product.in-cart .icons .btn_addToCart {
     background-color: var(--main-color);
+    pointer-events: none;
 } 
 
 .product.in-cart .icons .btn_addToCart svg {

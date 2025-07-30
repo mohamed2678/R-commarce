@@ -31,6 +31,8 @@ function ProductsDetails() {
     };
     fetchProduct();
   }, [id]);
+   
+  
   useEffect(() => {
     if (!product) return;
     fetch(`https://dummyjson.com/products/category/${product.category}`)

@@ -64,3 +64,38 @@ a {
 .in-cart {
   border-color: var(--main-color) !important;
 }
+
+
+/*  tosat style */
+.stoast-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 300px;
+  max-width: 300px;
+}
+.stoast-wrapper img {
+  width: auto;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.stoast-wrapper .toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.stoast-wrapper strong  {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.stoast-wrapper .toast-content .btn {
+  margin-top: 5px;
+  font-size: 13px;
+}

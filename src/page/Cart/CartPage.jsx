@@ -6,20 +6,21 @@ import './cart.css';
 
 function cart() {
       
-  const { cartItems } = useContext(CartContext);
+  const { incressQuantuiti , decressQuantity, removeItem ,cartItems } = useContext(CartContext);
   console.log(cartItems);
 
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)
 
     return (
       <div className="Checkout">
         <div className="OrderSummry">
           <h1>Order Summary</h1>
           <div className="items">
-            {cartItems.lenght === 0 ? (
+            {cartItems.length === 0 ? (
               <p>Your cart is empty.</p>
             ) : (
               cartItems.map((item, index) => (
+                <>
                 <div className="item_cart" key={index}>
                   <div className="img_name">
                     <img src={item.thumbnail} alt="" />
@@ -27,14 +28,15 @@ function cart() {
                       <h4>{item.title}</h4>
                       <p className='price'>{item.price}</p>
                       <div className="quantity_control">
-                        <button className=''>-</button>
-                        <span className='quantity'>1</span>
-                        <button className=''>+</button>
+                        <button className='' onClick={() => decressQuantity(item.id)}>-</button>
+                        <span className='quantity'>{item.quantity}</span>
+                        <button className='' onClick={() => incressQuantuiti(item.id)}>+</button>
                       </div>
                     </div>
                   </div>
-                    <button className='delete_item'><FaTrashAlt  /></button>
+                    <button className='delete_item' onClick={() => removeItem(item.id)}><FaTrashAlt  /></button>
                 </div>
+                </>
               ))
             )}
           </div>
