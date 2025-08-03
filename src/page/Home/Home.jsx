@@ -4,6 +4,7 @@ import SlideProducts from "../../components/slideProduct/SlidProduct";
 
 import "./Home.css";
 import SlideProductLoading from "../../components/slideProduct/SlideProductLoading";
+import PageTransition from "../../components/PageTransition";
 
 const categories = [
   "smartphones",
@@ -12,10 +13,9 @@ const categories = [
   "sunglasses",
   "mens-shoes",
   "mens-watches",
-]
+];
 
 function Home() {
-
   const [products, setProducts] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -24,42 +24,55 @@ function Home() {
       try {
         const result = await Promise.all(
           categories.map(async (category) => {
-            const res = await fetch(`https://dummyjson.com/products/category/${category}`);
-            const data = await res.json()
-            return {[category] : data.products}
+            const res = await fetch(
+              `https://dummyjson.com/products/category/${category}`
+            );
+            const data = await res.json();
+            return { [category]: data.products };
           })
-        )
+        );
         const productData = Object.assign({}, ...result);
         setProducts(productData);
-      }
-      catch (error) {
+      } catch (error) {
         console.error("Failed to fetch products", error);
       } finally {
         setLoading(false);
       }
-    }
+    };
     fetchProduct();
-  }, [])
-
+  }, []);
 
   return (
     <>
-      <HeroSlider />
+      <PageTransition>
+        <HeroSlider />
 
-      {loading ? (
-        <>
-        <p><SlideProductLoading /></p>
-        <p><SlideProductLoading /></p>
-        <p><SlideProductLoading /></p>
-        <p><SlideProductLoading /></p>
-        </>
-      ): (
-        categories.map((category) => (
-        <SlideProducts data={products[category]} key={category} title={category.replace("-", " ")} />
-      ))
-      )}
-
-    </> 
+        {loading ? (
+          <>
+            <p>
+              <SlideProductLoading />
+            </p>
+            <p>
+              <SlideProductLoading />
+            </p>
+            <p>
+              <SlideProductLoading />
+            </p>
+            <p>
+              <SlideProductLoading />
+            </p>
+          </>
+        ) : (
+          categories.map((category) => (
+            <SlideProducts
+              data={products[category]}
+              key={category}
+              title={category.replace("-", " ")}
+            />
+          ))
+        )}
+      </PageTransition>
+    </>
   );
 }
 

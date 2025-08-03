@@ -15,7 +15,6 @@ function Product({item}) {
 
     const Navigate = useNavigate()
   
-  console.log(cartItems)
   
   // Check if the item is already in the cart
   const isCart = cartItems.some(i => i.id === item.id);

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../../components/Cartcontext/CartContext';
 import { FaTrashAlt } from "react-icons/fa";
 import './cart.css';
+import PageTransition from '../../components/PageTransition';
 
 
 function cart() {
@@ -12,7 +13,8 @@ function cart() {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)
 
     return (
-      <div className="Checkout">
+      <PageTransition>
+        <div className="Checkout">
         <div className="OrderSummry">
           <h1>Order Summary</h1>
           <div className="items">
@@ -52,6 +54,7 @@ function cart() {
           </div>
         </div>
       </div>
+      </PageTransition>
     )
  }
 

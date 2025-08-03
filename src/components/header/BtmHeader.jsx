@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { CiLogin } from "react-icons/ci";
 import { AiOutlineUserAdd } from "react-icons/ai";
 
@@ -12,9 +12,15 @@ const navLinks = [
   { title: "Blog", Link: "/blog" },
   { title: "Contact", Link: "/contact" },
 ];
+
 function BtmHeader() {
+  const location = useLocation();
   const [categories, setCategories] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products/categories")
@@ -34,7 +40,7 @@ function BtmHeader() {
             </div>
             <div className={`category_nav_list ${isOpen ? "active" : ""}`}>
               {categories.map((category) => (
-                <Link to={category.slug} key={category.name}>
+                <Link to={`category/${category.slug}`} key={category.name}>
                   {category.name}
                 </Link>
               ))}

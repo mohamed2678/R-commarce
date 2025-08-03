@@ -5,6 +5,9 @@ import Home from "./page/Home/Home";
 import ProductsDetails from "./page/ProductDetails/ProductsDetails";
 import Cart from "./page/Cart/CartPage";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/ScrollToTop";
+import { AnimatePresence } from "framer-motion";
+import CategoryPage from "./page/CategoryPage/CategoryPage";
 
 function App() {
   return (
@@ -14,28 +17,27 @@ function App() {
         <BtmHeader />
       </header>
 
-      
-  <Toaster
-      position="bottom-right"
-      reverseOrder={false} 
-      toastOptions={{
-        style: {
-            background: '#e9e9e9',
-            padding: '15px',
-            borderRadius: '8px',
-          }
-        
-      }}
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            background: "#e9e9e9",
+            padding: "15px",
+            borderRadius: "8px",
+          },
+        }}
       />
 
-
-      <Routes>
-        <Route path="/" element={<Home /> } />
-        <Route path="/products/:id" element={<ProductsDetails />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-
-      
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products/:id" element={<ProductsDetails />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }
