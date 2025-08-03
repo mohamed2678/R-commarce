@@ -25,7 +25,8 @@ function BtmHeader() {
   useEffect(() => {
     fetch("https://dummyjson.com/products/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data));
+      .then((data) => setCategories(data))
+      .catch((err) => console.error("Failed to fetch categories:", err));
   }, []);
 
   return (
@@ -40,7 +41,7 @@ function BtmHeader() {
             </div>
             <div className={`category_nav_list ${isOpen ? "active" : ""}`}>
               {categories.map((category) => (
-                <Link to={`category/${category.slug}`} key={category.name}>
+                <Link to={`category/${category.slug}`} key={category.slug}>
                   {category.name}
                 </Link>
               ))}

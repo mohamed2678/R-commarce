@@ -35,7 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:id" element={<ProductsDetails />} />
-          <Route path="/category/:id" element={<CategoryPage />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>
       </AnimatePresence>
     </>
