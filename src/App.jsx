@@ -8,6 +8,8 @@ import { Toaster } from "react-hot-toast";
 import ScrollToTop from "./components/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./page/CategoryPage/CategoryPage";
+import SearcResults from "./page/SearcResults";
+import About from "./page/About/About";
 
 function App() {
   return (
@@ -33,7 +35,9 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/search" element={<SearcResults />} />
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>

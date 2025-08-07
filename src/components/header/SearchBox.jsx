@@ -8,12 +8,10 @@ function SearchBox() {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefult();
+        e.preventDefault();
         if (searchTerm.trim()) {
-            navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
-        } else {
-            navigate('/');
-        }
+            navigate(`/search?query=${encodeURIComponent(searchTerm.trim())}`);
+        } 
 
     }
   return (

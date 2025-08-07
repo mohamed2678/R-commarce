@@ -22,7 +22,6 @@ function cart() {
               <p>Your cart is empty.</p>
             ) : (
               cartItems.map((item, index) => (
-                <>
                 <div className="item_cart" key={index}>
                   <div className="img_name">
                     <img src={item.thumbnail} alt="" />
@@ -38,7 +37,6 @@ function cart() {
                   </div>
                     <button className='delete_item' onClick={() => removeItem(item.id)}><FaTrashAlt  /></button>
                 </div>
-                </>
               ))
             )}
           </div>

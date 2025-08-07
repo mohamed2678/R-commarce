@@ -1,8 +1,7 @@
 
 
 
-
-.category_products .container .products{
+ .products{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
