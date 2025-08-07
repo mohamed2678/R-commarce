@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
+import { useNavigate } from 'react-router-dom';
 
 function SearchBox() {
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefult();
+        if (searchTerm.trim()) {
+            navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+        } else {
+            navigate('/');
+        }
+
+    }
   return (
     <div className="searchBox_container">
-        <form action="" className="search_box">
+        <form onSubmit={handleSubmit} className="search_box">
                   <input
                     type="text"
                     name="search"
                     id="search"
                     placeholder="search for Products"
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                   <button type="submit">
                     <CiSearch />
