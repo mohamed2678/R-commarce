@@ -39,6 +39,9 @@ a {
   text-decoration: none;
   color: var(--main-heading);
 }
+ul,ol {
+  list-style: none;
+}
 .container {
   width: 90%;
   max-width: 1350px;

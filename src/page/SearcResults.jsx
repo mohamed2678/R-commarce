@@ -10,7 +10,6 @@ function SearcResults() {
   const query = new URLSearchParams(useLocation().search).get("query");
   const [searchResults, setSearchResults] = useState([]);
 
-  console.log(searchResults);
 
 
   const [loading, setLoading] = useState(true);
@@ -37,7 +36,7 @@ function SearcResults() {
       <div className="search-results">
         {loading ? (
           <SlideProductLoading key={query} />
-        ) : (
+        ) : searchResults.length > 0 ? (
           <div className="container">
             <div className="top_slide">
               <h2>Search Results for "{query}"</h2>
@@ -45,14 +44,13 @@ function SearcResults() {
                 Showing results for your search query.
               </p>
             </div>
-
             <div className="products">
               {searchResults.map((item, index) => (
                 <Product item={item} key={index} />
               ))}
             </div>
           </div>
-        )}
+        ) : <div className="container">No Resulit..</div>}
       </div>
     </PageTransition>
   );
