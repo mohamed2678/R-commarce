@@ -10,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./page/CategoryPage/CategoryPage";
 import SearcResults from "./page/SearcResults";
 import About from "./page/About/About";
-import Favorite from "./page/favorites/Favorite";
+import Favorite from "./page/Favorites/Favorite";
 
 
 function App() {
