@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 
 function ProductItem({ product }) {
-  const { cartItems, addCart } = useContext(CartContext);
+  const { cartItems, addCart, removeFav, addFav, favorite } = useContext(CartContext);
   const Navigate = useNavigate();
 
   const isCart = cartItems.some((i) => i.id === product.id);
@@ -32,6 +32,42 @@ function ProductItem({ product }) {
       { duration: 3500 }
     );
   };
+
+  const isFav = favorite.some((i) => i.id === product.id);
+
+  const HandleAddToFav = () => {
+    if (isFav) {
+      removeFav(product.id);
+      toast.error(
+        <div className="stoast-wrapper">
+          <img src={product.thumbnail} alt="" />
+          <div className="toast-content">
+            <strong>{product.title}</strong>
+            Removed from favorites
+          </div>
+        </div>,
+        { duration: 3500 }
+      );
+    } else {
+      addFav(product);
+      toast.success(
+        <div className="stoast-wrapper">
+          <img src={product.thumbnail} alt="" />
+          <div className="toast-content">
+            <strong>{product.title}</strong>
+            Added to favorites
+            <div>
+              <button className="btn" onClick={() => Navigate("/favorite")}>
+                Veiw favorite
+              </button>
+            </div>
+          </div>
+        </div>,
+        { duration: 3500 }
+      );
+    }
+  };
+
 
   return (
     <div className="details_item">
@@ -63,7 +99,7 @@ function ProductItem({ product }) {
       </button>
 
       <div className="icons">
-        <span>
+        <span onClick={HandleAddToFav} className={`${isFav ? "in-fav" : ""}`}>
           <CiHeart />
         </span>
         <span>

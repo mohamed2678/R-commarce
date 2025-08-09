@@ -7,7 +7,7 @@ import "./header.css";
 import { CartContext } from "../Cartcontext/CartContext";
 import SearchBox from "./SearchBox";
 function TopHeader() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, favorite } = useContext(CartContext);
 
   return (
     <div className="top-header">
@@ -18,8 +18,10 @@ function TopHeader() {
         <SearchBox />
         <div className="header-icons">
           <div className="icon">
+            <Link to="./favorite">
             <CiHeart />
-            <span className="count">0</span>
+            </Link>
+            <span className="count">{favorite.length}</span>
           </div>
           <div className="icon">
             <Link to="./cart">

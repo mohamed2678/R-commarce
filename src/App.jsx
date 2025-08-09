@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./page/CategoryPage/CategoryPage";
 import SearcResults from "./page/SearcResults";
 import About from "./page/About/About";
+import Favorite from "./page/favorites/favorite";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/search" element={<SearcResults />} />
+          <Route path="/favorite" element={<Favorite />} />
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/category/:category" element={<CategoryPage />} />
         </Routes>

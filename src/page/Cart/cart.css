@@ -135,3 +135,114 @@
     transition: 0.3s ease-in-out;
     margin-bottom: 20px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .Checkout .OrderSummry {
+    width: 70%;
+    padding: 0 10px;
+  }
+  .Checkout .items .item_cart {
+    gap: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Checkout {
+    margin: 30px 0;
+  }
+  .Checkout .OrderSummry {
+    width: 95%;
+    padding: 0 4px;
+  }
+  .Checkout .items {
+    height: 260px;
+  }
+  .Checkout .items .item_cart {
+    height: 90px;
+    gap: 6px;
+    padding-right: 4px;
+  }
+  .Checkout .items .item_cart .img_name {
+    gap: 8px;
+  }
+  .Checkout .items .item_cart img {
+    height: 50px;
+  }
+  .Checkout .items .item_cart .img_name h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    -webkit-line-clamp: 1;
+  }
+  .Checkout .items .item_cart .quantity_control .quantity {
+    min-width: 28px;
+    font-size: 14px;
+  }
+  .Checkout .items .item_cart .quantity_control button {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+  }
+  .Checkout .items .item_cart .delete_item svg {
+    font-size: 18px;
+  }
+  .Checkout .buttom-summary .shop_table p,
+  .Checkout .buttom-summary .shop_table .total_price {
+    font-size: 15px;
+  }
+  .Checkout .buttom-summary .checkout-btn {
+    font-size: 15px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .Checkout {
+    margin: 10px 0;
+  }
+  .Checkout .OrderSummry {
+    width: 80%;
+    padding: 0 2px;
+  }
+  .Checkout .items {
+    height: 160px;
+  }
+  .Checkout .items .item_cart {
+    height: 60px;
+    gap: 2px;
+    padding-right: 2px;
+  }
+  .Checkout .items .item_cart .img_name {
+    gap: 4px;
+  }
+  .Checkout .items .item_cart img {
+    height: 32px;
+    border-radius: 5px;
+  }
+  .Checkout .items .item_cart .img_name h4 {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  .Checkout .items .item_cart .quantity_control .quantity {
+    min-width: 18px;
+    font-size: 10px;
+  }
+  .Checkout .items .item_cart .quantity_control button {
+    width: 13px;
+    height: 13px;
+    font-size: 10px;
+  }
+  .Checkout .items .item_cart .delete_item svg {
+    font-size: 12px;
+  }
+  .Checkout .buttom-summary .shop_table p,
+  .Checkout .buttom-summary .shop_table .total_price {
+    font-size: 11px;
+  }
+  .Checkout .buttom-summary .checkout-btn {
+    font-size: 11px;
+    padding: 7px 0;
+    margin-bottom: 10px;
+  }
+}

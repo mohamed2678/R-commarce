@@ -30,16 +30,20 @@ function SlidProduct({ data, title }) {
             disableOnInteraction: false,
           }}
           loop={true}
+          breakpoints={{
+            1200: { slidesPerView: 4 },
+            900: { slidesPerView: 3 },
+            600: { slidesPerView: 2 }, 
+            0: { slidesPerView: 1 },
+          }}
           modules={[Navigation, Autoplay]}
           className="mySwiper"
         >
-          {data.map((item) => {
-            return (
-              <SwiperSlide>
-                <Product item={item} />
-              </SwiperSlide>
-            );
-          })}
+          {data.map((item, idx) => (
+            <SwiperSlide key={idx}>
+              <Product item={item} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

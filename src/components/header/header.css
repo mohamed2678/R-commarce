@@ -224,3 +224,133 @@ header {
   object-fit: cover;
   border-radius: 5px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .top-header .container,
+  .btm-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .top-header .search_box {
+    width: 100%;
+    max-width: 400px;
+  }
+  .top-header .search_box input {
+    width: 80vw;
+    min-width: 120px;
+  }
+  .btm-header .nav {
+    gap: 20px;
+  }
+  .btm-header .category_nav {
+    width: 170px;
+  }
+}
+
+@media (max-width: 800px) {
+  .top-header .container,
+  .btm-header .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .top-header .logo {
+    width: 110px;
+    margin-bottom: 8px;
+  }
+  .top-header .search_box {
+    width: 100%;
+    max-width: 300px;
+  }
+  .top-header .search_box input {
+    width: 60vw;
+    min-width: 80px;
+    height: 38px;
+  }
+  .top-header .search_box button {
+    height: 38px;
+    width: 45px;
+  }
+  .top-header .header-icons {
+    gap: 16px;
+  }
+  .top-header .header-icons .icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .btm-header .nav {
+    gap: 10px;
+    font-size: 15px;
+  }
+  .btm-header .category_nav {
+    width: 120px;
+  }
+  .btm-header .nav_links li {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    position: static;
+  }
+  .top-header .container,
+  .btm-header .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .top-header .logo {
+    width: 80px;
+    margin-bottom: 6px;
+  }
+  .top-header .search_box {
+    width: 100%;
+    max-width: 200px;
+  }
+  .top-header .search_box input {
+    width: 40vw;
+    min-width: 50px;
+    height: 32px;
+    font-size: 13px;
+  }
+  .top-header .search_box button {
+    height: 32px;
+    width: 32px;
+  }
+  .top-header .header-icons {
+    gap: 10px;
+  }
+  .top-header .header-icons .icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .btm-header .nav {
+    gap: 4px;
+    font-size: 13px;
+  }
+  .btm-header .category_nav {
+    width: 90px;
+  }
+  .btm-header .category_nav .category_btn {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+  .btm-header .nav_links li {
+    padding: 6px 4px;
+    font-size: 13px;
+  }
+  .btm-header .sign_regs-icon {
+    gap: 8px;
+  }
+  .btm-header .sign_regs-icon svg {
+    font-size: 15px;
+  }
+  .suggestions li img {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 function Product({item}) {
   
   // Import the CartContext to access cart items and functions  
-  const { cartItems, addCart } = useContext(CartContext)
+  const { cartItems, addCart, addFav, favorite, removeFav } = useContext(CartContext)
 
     const Navigate = useNavigate()
   
@@ -37,6 +37,39 @@ function Product({item}) {
     )
   }
 
+  const isFav = favorite.some(i => i.id === item.id);
+
+
+  const HandleAddToFav = () => {
+    if (isFav) {
+      removeFav(item.id);
+      toast.error(
+        <div className='stoast-wrapper'>
+          <img src={item.thumbnail} alt="" />
+          <div className='toast-content'>
+            <strong>{item.title}</strong>
+            Removed from favorites
+          </div>
+        </div>
+        ,{duration: 3500}
+      )
+    } else {
+      addFav(item);
+      toast.success(
+        <div className='stoast-wrapper'>
+          <img src={item.thumbnail} alt="" />
+          <div className='toast-content'>
+            <strong>{item.title}</strong>
+            Added to favorites
+            <div>
+            <button className='btn' onClick={() => Navigate('/favorite')}>Veiw favorite</button>
+            </div>
+            </div>
+        </div>
+        ,{duration: 3500}
+      )
+    }
+  }
 
 
   return (
@@ -58,7 +91,7 @@ function Product({item}) {
       </Link>
       <div className="icons">
         <span className='btn_addToCart' onClick={HandleAddTocart}><CiShoppingCart /></span>
-        <span><CiHeart /></span>
+        <span onClick={HandleAddToFav} className={`${isFav ? "in-fav" : ""}`}><CiHeart /></span>
         <span><CiShare2 /></span>
       </div>
     </div>

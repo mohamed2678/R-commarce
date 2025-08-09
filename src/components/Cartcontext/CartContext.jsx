@@ -21,7 +21,9 @@ export default function CartProvider({ children }) {
         localStorage.setItem("favoritesItems", JSON.stringify(favorite));
     }, [favorite]);
 
-
+    const removeFav = (id) => {
+        setFavorite((prev) => prev.filter((item) => item.id !== id));
+    }
 
 
 
@@ -78,6 +80,10 @@ export default function CartProvider({ children }) {
         incressQuantuiti,
         decressQuantity,
         removeItem,
+        //fav
+        addFav,
+        favorite,
+        removeFav,
       }}
     >
       {children}
