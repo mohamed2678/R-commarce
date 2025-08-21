@@ -3,9 +3,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
-import heroslider1 from "../src/img/banner_Hero1.jpg";
-import heroslider2 from "../src/img/banner_Hero2.jpg";
-import heroslider3 from "../src/img/banner_Hero3.jpg";
+import heroslider1 from "../img/banner_Hero1.jpg";
+import heroslider2 from "../img/banner_Hero2.jpg";
+import heroslider3 from "../img/banner_Hero3.jpg";
 
 // Import Swiper styles
 import "swiper/css";
