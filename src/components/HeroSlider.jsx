@@ -2,6 +2,11 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
+import heroslider1 from "../src/img/banner_Hero1.jpg";
+import heroslider2 from "../src/img/banner_Hero2.jpg";
+import heroslider3 from "../src/img/banner_Hero3.jpg";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -35,7 +40,7 @@ function HeroSlider() {
                 <p>Windows XP/10/8/7/11 Ps3, tv</p>
                 <Link to={'/'} className="btn">Shop now</Link>
             </div>
-            <img src="../src/img/banner_Hero1.jpg" alt="Slider hero 1" />
+            <img src={heroslider1} alt="Slider hero 1" />
         </SwiperSlide>
                 <SwiperSlide>
             <div className="content">
@@ -44,7 +49,7 @@ function HeroSlider() {
                 <p>Windows XP/10/8/7/11 Ps3, tv</p>
                 <Link to={'/'} className="btn">Shop now</Link>
             </div>
-            <img src="../src/img/banner_Hero2.jpg" alt="Slider hero 1" />
+            <img src={heroslider2} alt="Slider hero 1" />
         </SwiperSlide>
                 <SwiperSlide>
             <div className="content">
@@ -53,7 +58,7 @@ function HeroSlider() {
                 <p>Windows XP/10/8/7/11 Ps3, tv</p>
                 <Link to={'/'} className="btn">Shop now</Link>
             </div>
-            <img src="../src/img/banner_Hero3.jpg" alt="Slider hero 1" />
+            <img src={heroslider3} alt="Slider hero 1" />
         </SwiperSlide>
         </Swiper>
         </div>
