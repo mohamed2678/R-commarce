@@ -11,6 +11,9 @@ import CategoryPage from "./page/CategoryPage/CategoryPage";
 import SearcResults from "./page/SearcResults";
 import About from "./page/About/About";
 import Favorite from "./page/Favorites/Favorite";
+import Accessories from "./page/accessories/Accessories";
+import Blog from "./page/blog/Blog";
+import Contact from "./page/contact/Contact";
 
 
 function App() {
@@ -38,6 +41,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/search" element={<SearcResults />} />
           <Route path="/favorite" element={<Favorite />} />

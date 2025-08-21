@@ -1,0 +1,110 @@
+/* contact.css */
+
+.contact-page {
+  padding: 36px 0 64px;
+}
+
+.contact-header {
+  margin-bottom: 20px;
+  animation: slideInLeft 0.7s cubic-bezier(.77,0,.18,1) both;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.contact-sub {
+  color: var(--p-color);
+  margin-bottom: 18px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+}
+
+.contact-form {
+  background: var(--white-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  animation: slideInRight 0.7s cubic-bezier(.77,0,.18,1) both;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-heading);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.contact-form .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.contact-form .btn {
+  background: var(--main-color);
+  color: var(--white-color);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.contact-info {
+  background: #f7fbff;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.contact-info h4 {
+  margin-bottom: 10px;
+  color: var(--color-heading);
+}
+
+.contact-info p {
+  color: var(--p-color);
+  margin-bottom: 12px;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.info-item strong { display:block; }
+
+/* animations */
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+/* responsive */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { order: 2; }
+}
+
+@media (max-width: 480px) {
+  .contact-form .row { grid-template-columns: 1fr; }
+  .contact-title { font-size: 1.5rem; }
+}
